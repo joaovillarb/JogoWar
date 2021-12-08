@@ -22,15 +22,19 @@ class JogoTest {
     }
 
     @Test
-    void Deve_gerar_um_numero_entre_1_e_6() {
+    void IntanciaDeDadoDeveSerAmesma() {
+        novaIsntanciaDado = Dado.obtemInstancia();
+        assertTrue(novaIsntanciaDado == this.dado);
+    }
+
+    @Test
+    void DeveGerarUmNumeroEntre1E6() {
         final int maior = 6;
         final int menor = 1;
         int random = dado.rodar();
         assertTrue(maior >= random);
         assertTrue(menor <= random);
     }
-
-
 
     private List<Jogador> inicializaJogadores() {
         List<Jogador> jogadores = List.of(new Jogador("Almir", Cor.sortear()),
