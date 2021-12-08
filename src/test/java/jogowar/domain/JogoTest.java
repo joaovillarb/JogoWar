@@ -17,7 +17,7 @@ class JogoTest {
 
     @BeforeEach
     void setup() {
-        dado = new Dado();
+        dado = Dado.obtemInstancia();
         jogadores = inicializaJogadores();
     }
 
