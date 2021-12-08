@@ -1,9 +1,9 @@
 package jogowar.domain;
 
-import jogowar.domain.Cor;
-import jogowar.domain.Dado;
-import jogowar.domain.Jogador;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayNameGeneration;
+import org.junit.jupiter.api.DisplayNameGenerator;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
@@ -31,13 +31,10 @@ class JogoTest {
     }
 
 
-
     private List<Jogador> inicializaJogadores() {
-        List<Jogador> jogadores = List.of(new Jogador("Almir", Cor.sortear()),
-                                          new Jogador("Ana Eliza", Cor.sortear()),
-                                          new Jogador("Madeiro", Cor.sortear()),
-                                          new Jogador("Giba", Cor.sortear()));
-
-        return jogadores;
+        return List.of(new Jogador("Almir", Cor.sortear()),
+                new Jogador("Ana Eliza", Cor.sortear()),
+                new Jogador("Madeiro", Cor.sortear()),
+                new Jogador("Giba", Cor.sortear()));
     }
 }

@@ -1,6 +1,6 @@
 package jogowar.domain.continente;
 
-import jogowar.domain.jogador.Jogador;
+import jogowar.domain.Jogador;
 import jogowar.domain.territorio.Territorio;
 
 import java.util.List;

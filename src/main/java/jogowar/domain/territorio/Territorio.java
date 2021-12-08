@@ -1,7 +1,7 @@
 package jogowar.domain.territorio;
 
-import jogowar.domain.exercito.Exercito;
-import jogowar.domain.jogador.Jogador;
+import jogowar.domain.Exercito;
+import jogowar.domain.Jogador;
 
 import java.util.List;
 

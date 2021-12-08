@@ -1,6 +1,6 @@
 package jogowar.domain.batalha;
 
-import jogowar.domain.jogador.Jogador;
+import jogowar.domain.Jogador;
 
 public interface BatalhaService {
 

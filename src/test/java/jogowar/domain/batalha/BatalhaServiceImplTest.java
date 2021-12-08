@@ -1,7 +1,7 @@
 package jogowar.domain.batalha;
 
-import jogowar.domain.cor.Cor;
-import jogowar.domain.jogador.Jogador;
+import jogowar.domain.Cor;
+import jogowar.domain.Jogador;
 import org.junit.jupiter.api.*;
 
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
