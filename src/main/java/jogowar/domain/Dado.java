@@ -1,4 +1,4 @@
-package jogowar.domain.dado;
+package jogowar.domain;
 
 import java.util.Random;
 

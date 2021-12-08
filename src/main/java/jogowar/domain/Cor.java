@@ -1,4 +1,4 @@
-package jogowar.domain.cor;
+package jogowar.domain;
 
 import java.util.Random;
 
