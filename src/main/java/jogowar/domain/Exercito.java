@@ -1,6 +1,4 @@
-package jogowar.domain.exercito;
-
-import jogowar.domain.cor.Cor;
+package jogowar.domain;
 
 public class Exercito {
     private Cor cor;
