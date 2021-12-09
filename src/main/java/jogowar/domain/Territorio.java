@@ -6,13 +6,12 @@ import java.util.List;
 
 public class Territorio {
     private final String nome;
-    private final List<Territorio> adjacentes;
+    private List<Territorio> adjacentes;
     private Jogador jogador;
     private Exercito exercito;
 
-    public Territorio(String nome, List<Territorio> adjacentes) {
+    public Territorio(String nome) {
         this.nome = nome;
-        this.adjacentes = adjacentes;
     }
 
     public String getNome() {
@@ -21,6 +20,10 @@ public class Territorio {
 
     public List<Territorio> getAdjacentes() {
         return adjacentes;
+    }
+    
+    public void setAdjacentes(List<Territorio> adjacentes) {
+    	this.adjacentes = adjacentes;
     }
 
     public Jogador getJogador() {
