@@ -1,8 +1,9 @@
-package jogowar.domain;
+package jogowar.domain.jogador;
 
-import jogowar.domain.carta.Carta;
+import jogowar.domain.Carta;
+import jogowar.domain.Cor;
+import jogowar.domain.Territorio;
 import jogowar.domain.objetivo.Objetivo;
-import jogowar.domain.territorio.Territorio;
 
 import java.util.List;
 
@@ -12,11 +13,6 @@ public class Jogador {
     private Objetivo objetivo;
     private List<Carta> cartas;
     private List<Territorio> territorios;
-
-    public Jogador(String nome, Cor cor) {
-        this.nome = nome;
-        this.cor = cor;
-    }
 
     public String getNome() {
         return nome;

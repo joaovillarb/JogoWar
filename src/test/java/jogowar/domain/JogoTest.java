@@ -1,6 +1,12 @@
 package jogowar.domain;
 
-import org.junit.jupiter.api.*;
+import jogowar.domain.jogador.Jogador;
+import jogowar.domain.jogador.JogadorFactoryMethod;
+import jogowar.exceptions.QuantidadeJogadoresException;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayNameGeneration;
+import org.junit.jupiter.api.DisplayNameGenerator;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
@@ -20,6 +26,11 @@ class JogoTest {
     }
 
     @Test
+    void deveVerificarSeExisteInstanciaDeSingletons() {
+        assertNotNull(dado);
+    }
+
+    @Test
     void deveGerarUmNumeroEntre1e6() {
         final int maior = 6;
         final int menor = 1;
@@ -29,27 +40,39 @@ class JogoTest {
     }
 
     @Test
-    void deveAutorizarInicializacaoRodada(){
+    void deveFabricarUmJogador() {
+        var nome = "Diego";
+        var cor = Cor.AZUL;
+        JogadorFactoryMethod jogadorFactory = new JogadorFactoryMethod();
+        Jogador jogador = jogadorFactory.fabricarJogador(nome, cor);
+        assertEquals(nome, jogador.getNome());
+        assertEquals(cor, jogador.getCor());
+        assertNull(jogador.getObjetivo());
+        assertNull(jogador.getCartas());
+        assertNull(jogador.getTerritorios());
+    }
+
+    @Test
+    void deveAutorizarInicializacaoRodada() {
         jogo = new Jogo(this.dado, this.jogadores);
 
         assertTrue(jogo.inicializaRodada());
     }
 
     @Test
-    void deveInvalidarInicializacaoRodada(){
-        jogo = new Jogo(this.dado, List.of(new Jogador("Almir", Cor.sortear())));
+    void deveInvalidarInicializacaoRodada() {
+        JogadorFactoryMethod jogadorFactory = new JogadorFactoryMethod();
+        jogo = new Jogo(this.dado, List.of(jogadorFactory.fabricarJogador("Almir", Cor.sortear())));
 
-        assertThrows(IllegalArgumentException.class, () -> jogo.inicializaRodada());
+        assertThrows(QuantidadeJogadoresException.class, () -> jogo.inicializaRodada());
     }
 
 
-
     private List<Jogador> inicializaJogadores() {
-        List<Jogador> jogadores = List.of(new Jogador("Almir", Cor.sortear()),
-                                          new Jogador("Ana Eliza", Cor.sortear()),
-                                          new Jogador("Madeiro", Cor.sortear()),
-                                          new Jogador("Giba", Cor.sortear()));
-
-        return jogadores;
+        JogadorFactoryMethod jogadorFactory = new JogadorFactoryMethod();
+        return List.of(jogadorFactory.fabricarJogador("Almir", Cor.AMARELO),
+                jogadorFactory.fabricarJogador("Ana Eliza", Cor.AZUL),
+                jogadorFactory.fabricarJogador("Madeiro", Cor.PRETO),
+                jogadorFactory.fabricarJogador("Giba", Cor.VERDE));
     }
 }

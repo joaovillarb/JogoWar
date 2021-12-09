@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Dado {
 
-    private static Dado instancia=null;
+    private static Dado instancia;
 
     private Dado(){}
 

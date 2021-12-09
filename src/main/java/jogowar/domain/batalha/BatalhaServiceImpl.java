@@ -1,6 +1,6 @@
 package jogowar.domain.batalha;
 
-import jogowar.domain.Jogador;
+import jogowar.domain.jogador.Jogador;
 
 public class BatalhaServiceImpl implements BatalhaService {
 

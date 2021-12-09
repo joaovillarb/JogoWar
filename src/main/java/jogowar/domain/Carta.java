@@ -1,4 +1,4 @@
-package jogowar.domain.carta;
+package jogowar.domain;
 
 public class Carta {
     private final String nome;
