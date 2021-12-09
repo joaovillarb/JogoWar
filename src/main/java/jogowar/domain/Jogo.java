@@ -1,11 +1,14 @@
 package jogowar.domain;
 
+import jogowar.domain.jogador.Jogador;
+import jogowar.exceptions.QuantidadeJogadoresException;
+
 import java.util.List;
 
 public class Jogo {
 
-    private Dado dado;
-    private List<Jogador> jogadores;
+    private final Dado dado;
+    private final List<Jogador> jogadores;
 
     public Jogo(Dado dado, List<Jogador> jogadores) {
         this.dado = dado;
@@ -16,9 +19,9 @@ public class Jogo {
         return jogadores;
     }
 
-    public boolean inicializaRodada(){
-        if (dado != null && jogadores.size() >= 4)
+    public boolean inicializaRodada() {
+        if (dado != null && jogadores.size() >= 3)
             return true;
-        throw new IllegalArgumentException("QUANTIDADE DE JOGARES MENOR QUE 4");
+        throw new QuantidadeJogadoresException("QUANTIDADE DE JOGARES MENOR QUE 3");
     }
 }
